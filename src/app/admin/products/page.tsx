@@ -11,7 +11,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import db from "@/db/db";
-import { CheckCircle2, XCircleIcon } from "lucide-react";
+import { CheckCircle2, MoreVertical, XCircleIcon } from "lucide-react";
+import { formatCurrency, formatNumber } from "@/lib/formatters";
 
 export default function AdminProductsPage() {
   return (
@@ -62,13 +63,22 @@ async function ProductsTable() {
             <TableCell>
               {product.isAvailableForPurchase ? (
                 <>
+                  <span className="sr-only">Available</span>
                   <CheckCircle2 />
                 </>
               ) : (
                 <>
+                  <span className="sr-only">Unavailable</span>
                   <XCircleIcon />
                 </>
               )}
+            </TableCell>
+            <TableCell>{product.name}</TableCell>
+            <TableCell>{formatCurrency(product.priceInCents / 100)}</TableCell>
+            <TableCell>{formatNumber(product._count.orders)}</TableCell>
+            <TableCell>
+              <MoreVertical />
+              <span className="sr-only">Actions</span>
             </TableCell>
           </TableRow>
         ))}
