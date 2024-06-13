@@ -12,7 +12,8 @@ export default function Layout({
         <NavLink href={"/products"}>Products</NavLink>
         <NavLink href={"/orders"}>Orders</NavLink>
       </Nav>
-      <div className="container my-6">{children}</div>
+      {/* <div className="container my-6">{children}</div> */}
+      {children}
     </>
   );
 }
