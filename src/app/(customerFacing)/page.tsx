@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import Features from "./_components/features";
 import { Separator } from "@/components/ui/separator";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 
 const getMostPopularProducts = cache(
   () => {
