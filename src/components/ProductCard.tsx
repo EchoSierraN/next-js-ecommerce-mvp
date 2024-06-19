@@ -76,40 +76,10 @@ export function ProductCard({
             <p className="line-clamp-4">{description}</p>
           </div>
         </div>
-        {/*}
-        <div className="flex flex-col md:flex-row gap-4 w-full">
-          <div className="flex-1 basis-full md:basis-1/3">
-            <Image src={imagePath} fill alt={name} />
-          </div>
-          <div className="flex flex-col gap-2 basis-1">
-            <p className="text-2xl line-clamp-4">{name}</p>
-            <p className="line-clamp-4">{description}</p>
-          </div>
-        </div>
-        */}
         <DialogFooter>
           <Button type="submit">{`Purchase ($${priceInCents / 100})`}</Button>
         </DialogFooter>
       </DialogContent>
-      {/* <Card className="flex overflow-hidden flex-col">
-        <div className="relative w-full h-auto aspect-video">
-          <Image src={imagePath} fill alt={name} />
-        </div>
-        <CardHeader>
-          <CardTitle>{name}</CardTitle>
-          <CardDescription>
-            {formatCurrency(priceInCents / 100)}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="flex-grow">
-          <p className="line-clamp-4">{description}</p>
-        </CardContent>
-        <CardFooter>
-          <Button asChild size="lg" className="w-full">
-            <Link href={`/products/${id}/purchase`}>Purchase</Link>
-          </Button>
-        </CardFooter>
-      </Card> */}
     </Dialog>
   );
 }
