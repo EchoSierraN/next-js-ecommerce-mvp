@@ -53,13 +53,14 @@ export function ProductCard({
             <p className="line-clamp-4">{description}</p>
           </CardContent>
           <CardFooter>
-            <Button asChild size="lg" className="w-full">
-              <Link href={`/products/${id}/purchase`}>Purchase</Link>
+            <Button size="lg" className="w-full">
+              {`Purchase`}
+              {/* <Link href={`/products/${id}/purchase`}>Purchase</Link> */}
             </Button>
           </CardFooter>
         </Card>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] md:min-w-[800px]">
+      <DialogContent className="sm:max-w-[425px] md:min-w-[800px] md:min-h-[400px]">
         <DialogHeader>
           <DialogTitle>{name}</DialogTitle>
           <DialogDescription>
@@ -67,12 +68,12 @@ export function ProductCard({
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col md:flex-row">
-          <div className="flex-1 basis-full md:basis-1/3">
+          <div className="flex-1 basis-full md:basis-5/12">
             <div className="relative w-full h-auto aspect-video">
               <Image src={imagePath} fill alt={name} />
             </div>
           </div>
-          <div className="flex-1 basis-full md:basis-2/3 px-4">
+          <div className="flex-1 basis-full md:basis-7/12 px-4">
             <p className="line-clamp-4">{description}</p>
           </div>
         </div>
